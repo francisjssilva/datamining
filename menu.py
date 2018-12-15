@@ -43,6 +43,7 @@ def sRatioMenu():
     print("|||                     (BETWEEN 0 AND 1)                     |||")
     print("|||                                                           |||")
     print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
+    print("\n"*5)
     inputChoosen = verifications.inputFloat("\n        Split Ratio: ")
     print"        Choosen:", inputChoosen
     verifications.clearScreen()
@@ -57,6 +58,8 @@ def classValueMenu(maxCol):
     print("|||                     (CLASS TO PREDICT)                    |||")
     print("|||                                                           |||")
     print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
+    print("\n"*6)
+
     inputChoosen = verifications.inputClassValue("\n        Column Nr.: ", maxCol)
     print"        Choosen:", inputChoosen
     verifications.clearScreen()
@@ -68,9 +71,11 @@ def dataSetPathMenu():
     print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
     print("|||                                                           |||")
     print("|||                   INSERT DATA SET PATH                    |||")
-    print("|||                      (USING \"/\")                        |||")
+    print("|||                        (USING \"/\")                        |||")
     print("|||                                                           |||")
     print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
+    print("\n"*6)
+
     inputChoosen, maxColNr = verifications.inputPath("\n        Dataset Path: ")
     print"        Choosen:", inputChoosen
     verifications.clearScreen()

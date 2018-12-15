@@ -73,5 +73,5 @@ def inputNumber(message):
 
 
 def clearScreen():
-    clear = "\n" * 100
+    clear = "\n" * 14
     print clear
