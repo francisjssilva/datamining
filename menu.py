@@ -25,7 +25,6 @@ def mainMenu():
         datasetPath, maxCol = dataSetPathMenu()
         classValue = classValueMenu(maxCol)
         spliRatio = sRatioMenu()
-        print('datasetPath: {0} \nclassValue: {1} \nspliRatio: {2} \nmaxCol: {3}', datasetPath, classValue, spliRatio, maxCol)
         bayes.naiveBayesHandler(datasetPath, classValue, spliRatio)
         return 0
 

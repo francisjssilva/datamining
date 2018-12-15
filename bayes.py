@@ -113,19 +113,16 @@ def naiveBayesHandler(dataset, classValue, splitRatio):
     dataset = loadCsv(dataset)
 
     print '\nFile {0} was read succesfully with {1} rows'.format('winequality-red', len(dataset))
-    print '\nSpliting Dataset... It may take some time...'
+    print '\nSpliting Dataset... It may take some time... It will depend on Dataset size.'
 
     # Split in training set and test set using a splitRatio
     trainSet, testSet = splitDataset(dataset, splitRatio)
-    print '\nSplit {0} rows into train with {1} and test with {2}'.format(len(dataset), trainSet, testSet)
-
-    dataset1 = [[1, 20, 1], [2, 21, 0], [3, 22, 1], [4, 22, 0]]
-    summary = summarize(dataset1, 2)
-    print('Summary by class value 1: {0}').format(summary)
+    print 'Dataset was successfully splitted into {0}% Train Set and {1}% Test Set!'.format(abs(splitRatio*100), abs(100-(splitRatio*100)))
+    # print '\nSplit {0} rows into train with {1} and test with {2}'.format(len(dataset), trainSet, testSet)
 
     # Separate by attribute the train data set
     summary = summarize(trainSet, classValue)
-    print '\nSummary by class value: \n{0}'.format(summary)
+    # print '\nSummary by class value: \n{0}'.format(summary)
 
     # Predict
     predictions = getPredictions(summary, testSet)
@@ -135,6 +132,3 @@ def naiveBayesHandler(dataset, classValue, splitRatio):
     print('Accuracy: {0}%').format(accuracy)
 
     return 0
-
-
-naiveBayesHandler('datasets/winequality.csv', 11, 0.67)
