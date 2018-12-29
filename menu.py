@@ -21,15 +21,16 @@ def mainMenu():
     print"        Choosen:", inputChoosen
     verifications.clearScreen()
 
+    datasetPath, maxCol = dataSetPathMenu()
+    classValue = classValueMenu(maxCol)
+    spliRatio = sRatioMenu()
+
     if inputChoosen == 1:
-        datasetPath, maxCol = dataSetPathMenu()
-        classValue = classValueMenu(maxCol)
-        spliRatio = sRatioMenu()
         bayes.naiveBayesHandler(datasetPath, classValue, spliRatio)
         return 0
 
     if inputChoosen == 2:
-        c45.c45Handler()
+        c45.c45Handler(datasetPath, classValue, spliRatio)
 
     return 0
 

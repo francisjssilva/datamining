@@ -1,6 +1,9 @@
 import csv
+import numpy as np
 import random
 import math
+
+from sklearn.metrics import confusion_matrix, classification_report, accuracy_score
 
 
 def loadCsv(filename):
@@ -112,12 +115,12 @@ def naiveBayesHandler(dataset, classValue, splitRatio):
     # datasets/winequalityTest.csv
     dataset = loadCsv(dataset)
 
-    print '\nFile {0} was read succesfully with {1} rows'.format('winequality-red', len(dataset))
-    print '\nSpliting Dataset... It may take some time... It will depend on Dataset size.'
+    print '\nFile {0} was read succesfully with {1} rows\n'.format('winequality-red', len(dataset))
+    print '\nSpliting Dataset... It may take some time... It will depend on Dataset size.\n'
 
     # Split in training set and test set using a splitRatio
     trainSet, testSet = splitDataset(dataset, splitRatio)
-    print 'Dataset was successfully splitted into {0}% Train Set and {1}% Test Set!'.format(abs(splitRatio*100), abs(100-(splitRatio*100)))
+    print 'Dataset was successfully splitted into {0}% Train Set and {1}% Test Set!\n'.format(abs(splitRatio*100), abs(100-(splitRatio*100)))
     # print '\nSplit {0} rows into train with {1} and test with {2}'.format(len(dataset), trainSet, testSet)
 
     # Separate by attribute the train data set
@@ -127,8 +130,12 @@ def naiveBayesHandler(dataset, classValue, splitRatio):
     # Predict
     predictions = getPredictions(summary, testSet)
 
-    # Get accuracy
-    accuracy = getAccuracy(testSet, predictions)
-    print('Accuracy: {0}%').format(accuracy)
+    testValues = np.delete(testSet, np.s_[:classValue:], 1)
+
+    print(confusion_matrix(testValues, predictions))
+    print(classification_report(testValues, predictions))
+    print("Accuracy: {0}%".format(accuracy_score(testValues, predictions)*100))
 
     return 0
+
+naiveBayesHandler("datasets/winequality.csv", 11, 0.67)
