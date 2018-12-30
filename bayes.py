@@ -137,5 +137,3 @@ def naiveBayesHandler(dataset, classValue, splitRatio):
     print("Accuracy: {0}%".format(accuracy_score(testValues, predictions)*100))
 
     return 0
-
-naiveBayesHandler("datasets/winequality.csv", 11, 0.67)

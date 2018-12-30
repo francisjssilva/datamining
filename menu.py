@@ -6,14 +6,15 @@ import verifications
 def mainMenu():
     print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
     print("|||                                                           |||")
-    print("|||             XICO'S DATA MINING PREDICTION APP             |||")
+    print("|||             MODEL TO REPORT CLASSIFICATION OF             |||")
+    print("|||                        ANY DATASET                        |||")
     print("|||                                                           |||")
     print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
     print("|||                                                           |||")
     print("|||                      CHOOSE ALGORITHM                     |||")
     print("|||                                                           |||")
     print("|||       1. NAIVE BAYES                                      |||")
-    print("|||       2. C4.5                                             |||")
+    print("|||       2. DECISION TREE                                    |||")
     print("|||                                                           |||")
     print("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
 
