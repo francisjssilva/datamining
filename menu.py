@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import bayes
 import c45
 import verifications
